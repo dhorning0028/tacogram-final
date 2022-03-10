@@ -12,7 +12,11 @@
       <%= form.text_field "image", class: "form-control" %>
     </div>
 
-    <%= form.submit "Create Post", class: "btn btn-primary" %>
+    <div class="mb-3">
+      <% form.label "uploaded_image", class: "form-label" %>
+      <%= form.file_field  "uploaded_image", class: "form-control" %>
+
+    <%= form.submit "Create Post", accept: "image/jpg,image/jpeg,image/png", class: "btn btn-primary" %>
   <% end %>
 <% else %>
   You must first <a href="/sessions/new">login</a> to post.
